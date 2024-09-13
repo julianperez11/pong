@@ -71,6 +71,7 @@ pygame.display.set_caption('Pong')  # Set window title
 # Colors
 light_grey = (200, 200, 200)
 red = (255, 0, 0)
+blue = (0, 0, 255)
 bg_color = pygame.Color('grey12')
 
 # Game Rectangles (ball and player paddle)
@@ -116,12 +117,11 @@ while True:
 
     # Visuals
     screen.fill(bg_color)  # Clear screen with background color
-    pygame.draw.rect(screen, light_grey, player)  # Draw player paddle
+    pygame.draw.rect(screen, blue, player) # Draw player paddle
     # TODO Task 1: Change color of the ball
     pygame.draw.ellipse(screen, red, ball)  # Draw ball
     player_text = basic_font.render(f'{score}', False, light_grey)  # Render player score
     screen.blit(player_text, (screen_width/2 - 15, 10))  # Display score on screen
-
     # Update display
     pygame.display.flip()
     clock.tick(60)  # Maintain 60 frames per second
